@@ -1,10 +1,3 @@
-const { Category, Product, Tag, ProductTag } = require('./models');
-
-// Use the models
-Category.findAll().then((categories) => {
-  console.log(categories);
-});
-
 
 // import models
 const Product = require('./Product');
