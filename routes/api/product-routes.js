@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   Product.findAll({
     include: [
       { model: Category }, // Include associated Category data
-      { model: Tag }, // Include associated Tag data
+      { model: Tag, through: ProductTag }, // Include associated Tag data
     ],
   })
     .then((products) => {
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
     },
     include: [
       { model: Category }, // Include associated Category data
-      { model: Tag }, // Include associated Tag data
+      { model: Tag, through: ProductTag }, // Include associated Tag data
     ],
   })
     .then((product) => {
